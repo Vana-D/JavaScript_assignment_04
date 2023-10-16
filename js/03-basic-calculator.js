@@ -59,6 +59,7 @@ function calculate(x, y, operation) {
 };
 
 
+do {
 // -- COLLECT FIRST NUMBER FROM USER
 let x = parseInt(prompt('Enter a number'));
 while (true) {
@@ -85,16 +86,16 @@ console.log(y);
 
 // -- COLLECT OPERATION TO PERFORM (+,-,*,/) FROM USER
 operation = prompt("Please specify which type of operation you would like to perform:"+ '\n' + '\n' + 'addition ( + )' + '\n' + 'subtraction ( - )' + '\n' + 'multiply ( * )' + '\n' + 'divide ( / )');
-    if(!(operation == '+' || operation  == '-' || operation == '*' || operation == '/' )) {
-        operation = prompt('Please input operation using symbols. Try again!' + '\n' + '\n' + 'addition ( + )' + '\n' + 'subtraction ( - )' + '\n' + 'multiply ( * )' + '\n' + 'divide ( / )');
-    }
-console.log(operation);
+    if (!(operation == '+' || operation  == '-' || operation == '*' || operation == '/' )) {
+        operation = prompt('Please input operation using symbols. Try again!' + '\n' + '( + ), ( - ), ( * ) or ( / )');
+    } 
+    
+    // -- CALL THE FUNCTION AND RETURN THE RESULT WITHIN AN ALERT
+    calculate(x, y, operation);
+    again = prompt('Run applications again? (y/n)', 'y');
+} while (again === 'y');
 
-
-// -- CALL THE FUNCTION AND RETURN THE RESULT WITHIN AN ALERT
-calculate(x, y, operation);
-
-
+alert('The program has been terminated.')
 
 
 
